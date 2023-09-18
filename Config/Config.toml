@@ -1,0 +1,34 @@
+# ===================
+# RPC URLs FOR DIFFERENT CHAINS
+# ===================
+[RPC]
+bnb = "https://rpc.ankr.com/bsc"
+opbnb = "https://opbnb-mainnet-rpc.bnbchain.org"
+
+# ===================
+# THREAD CONFIGURATIONS
+# ===================
+[threads]
+number_of_threads = 3  # Total number of concurrent threads to be executed.
+delay_between_threads = [10, 30] # Delay (in seconds) between the start of each thread, chosen randomly from the range.
+
+# ===================
+# SETTINGS
+# ===================
+[settings]
+cap_key = "You_capmonster_key"  # Capmonster API key.
+delay_action = [10, 30] # Delay (in seconds) between actions, chosen randomly from the range.
+max_retries_connect_server = 5 # Number of attempts to connect to the Discord server
+
+bnb_gwei = 1.0 # Gwei in BSC
+bnb_gas = 600000 # Gas in BSC
+
+opbnb_gwei = 0.5 # Gwei in OpBSC
+opbnb_gas = 500000 # Gas in OpBSC
+
+use_bnb_bridge = true # Enable/disable BNB -> OpBNB bridge via https://opbnb-bridge.bnbchain.org/deposit.
+use_zk_bridge = false # Enable/disable BNB -> OpBNB bridge via https://zkbridge.com/opbnb
+value_bridge_min = 0.0006 # Minimum BNB amount for the bridge
+value_bridge_max = 0.001 # Maximum BNB amount for the bridge
+value_ridge_decimal = 5 # Decimal precision for BNB amounts.
+
