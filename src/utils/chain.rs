@@ -260,14 +260,15 @@ async fn mint(private_key: &str, address_str: &str, web3: &Web3<Http>, dummy_id:
 
     match wait_until_tx_finished(&web3, tx_hash, 360).await {
         Ok((success, returned_tx_hash)) => {
-            let data_tr = format!("{} | {}", &address_str, &tx_hash);
             let folder = "result".to_string();
             if success {
                 info!("| {} | MINT: Transaction was successful! https://opbnbscan.com/tx/{:?}", &address_str, returned_tx_hash);
-                append_to_file(&data_tr, &folder).await.expect("Error write data in file 'result.txt'");
+                let data_ok = format!("OK | {} | {}", &address_str, &tx_hash);
+                append_to_file(&data_ok, &folder).await.expect("Error write data in file 'result.txt'");
             } else {
                 error!("| {} | MINT: Transaction failed! https://opbnbscan.com/tx/{:?}", &address_str, returned_tx_hash);
-                append_to_file(&data_tr, &folder).await.expect("Error write data in file 'result.txt'");
+                let data_error = format!("Error | {} | {}", &address_str, &tx_hash);
+                append_to_file(&data_error, &folder).await.expect("Error write data in file 'result.txt'");
             }
         },
         Err(err) => error!("Error: {}", err),
