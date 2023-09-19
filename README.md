@@ -30,7 +30,7 @@ Before launching the program, ensure the following files are correctly filled:
 
 ### RPC URLs for Different Chains
 - **BNB Smart Chain Mainnet**: `https://rpc.ankr.com/bsc`
-- **opBNB Mainnet**: `https://sepolia-rpc.scroll.io`
+- **opBNB Mainnet**: `https://opbnb-mainnet-rpc.bnbchain.org`
 
 ### Thread Configurations
 - **number_of_threads**: Total number of concurrent threads to be executed.
